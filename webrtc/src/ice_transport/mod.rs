@@ -303,7 +303,7 @@ impl RTCIceTransport {
         self.state.store(s as u8, Ordering::SeqCst)
     }
 
-    pub(crate) async fn new_endpoint(&self, f: MatchFunc) -> Option<Arc<Endpoint>> {
+    pub async fn new_endpoint(&self, f: MatchFunc) -> Option<Arc<Endpoint>> {
         let internal = self.internal.lock().await;
         if let Some(mux) = &internal.mux {
             Some(mux.new_endpoint(f).await)
