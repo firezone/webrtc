@@ -14,6 +14,7 @@ use util::{Buffer, Conn};
 use crate::error::Result;
 use crate::mux::endpoint::Endpoint;
 use crate::mux::mux_func::MatchFunc;
+use crate::Error;
 
 /// mux multiplexes packets on a single socket (RFC7983)
 
@@ -111,9 +112,12 @@ impl Mux {
                 }
             };
 
-            if let Err(err) = Mux::dispatch(&buf[..n], &endpoints).await {
-                log::error!("mux: ending readLoop dispatch error {:?}", err);
-                break;
+            match Mux::dispatch(&buf[..n], &endpoints).await {
+                Ok(_) | Err(Error::Util(util::Error::ErrBufferFull)) => {}
+                Err(e) => {
+                    log::error!("mux: ending readLoop dispatch error {:?}", e);
+                    break;
+                }
             }
         }
     }
