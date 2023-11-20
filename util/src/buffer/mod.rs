@@ -10,7 +10,6 @@ use crate::error::{Error, Result};
 
 const MIN_SIZE: usize = 2048;
 const CUTOFF_SIZE: usize = 128 * 1024;
-const MAX_SIZE: usize = 4 * 1024 * 1024;
 
 /// Buffer allows writing packets to an intermediate buffer, which can then be read form.
 /// This is verify similar to bytes.Buffer but avoids combining multiple writes into a single read.
@@ -51,9 +50,6 @@ impl BufferInternal {
 
         if newsize < MIN_SIZE {
             newsize = MIN_SIZE
-        }
-        if (self.limit_size == 0/*|| sizeHardlimit*/) && newsize > MAX_SIZE {
-            newsize = MAX_SIZE
         }
 
         // one byte slack
