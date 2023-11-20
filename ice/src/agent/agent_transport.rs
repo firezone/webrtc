@@ -99,7 +99,7 @@ impl AgentConn {
             // Make sure the buffer doesn't grow indefinitely.
             // NOTE: We actually won't get anywhere close to this limit.
             // SRTP will constantly read from the endpoint and drop packets if it's full.
-            buffer: Buffer::new(0, MAX_BUFFER_SIZE),
+            buffer: Buffer::new(0, 0),
             bytes_received: AtomicUsize::new(0),
             bytes_sent: AtomicUsize::new(0),
             done: AtomicBool::new(false),
