@@ -1880,12 +1880,13 @@ dependencies = [
 [[package]]
 name = "rcgen"
 version = "0.12.0"
-source = "git+https://github.com/ReactorScram/rcgen?branch=update-ring#2602d35c1bdd8b80b92fa3dd17c2ffbaaef1b5d7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5d918c80c5a4c7560db726763020bd16db179e4d5b828078842274a443addb5d"
 dependencies = [
  "pem",
  "ring",
  "time",
- "x509-parser 0.15.1 (git+https://github.com/ReactorScram/x509-parser?branch=update-ring)",
+ "x509-parser",
  "yasna",
 ]
 
@@ -2811,7 +2812,7 @@ dependencies = [
  "tokio-test",
  "webrtc-util",
  "x25519-dalek",
- "x509-parser 0.15.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "x509-parser",
 ]
 
 [[package]]
@@ -3128,24 +3129,7 @@ dependencies = [
 [[package]]
 name = "x509-parser"
 version = "0.15.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "7069fba5b66b9193bd2c5d3d4ff12b839118f6bcbef5328efafafb5395cf63da"
-dependencies = [
- "asn1-rs",
- "data-encoding",
- "der-parser",
- "lazy_static",
- "nom",
- "oid-registry",
- "rusticata-macros",
- "thiserror",
- "time",
-]
-
-[[package]]
-name = "x509-parser"
-version = "0.15.1"
-source = "git+https://github.com/ReactorScram/x509-parser?branch=update-ring#f89ea50848975279325a47dd06ed985a94eabd5e"
+source = "git+https://github.com/rusticata/x509-parser?rev=5132fdc51bfe14406ecbfd6f01a9592dad51eca1#5132fdc51bfe14406ecbfd6f01a9592dad51eca1"
 dependencies = [
  "asn1-rs",
  "data-encoding",
