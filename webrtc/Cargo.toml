@@ -39,8 +39,8 @@ waitgroup = "0.1"
 regex = "1.9.5"
 smol_str = { version = "0.2", features = ["serde"] }
 url = "2"
-rustls = { version = "0.21", features = ["dangerous_configuration"]}
-rcgen = { version = "0.11", features = ["pem", "x509-parser"]}
+rustls = { version = "0.22" }
+rcgen = { path = "../../rcgen/rcgen", features = ["pem", "x509-parser"]}
 ring = "0.17"
 sha2 = "0.10"
 lazy_static = "1.4"
