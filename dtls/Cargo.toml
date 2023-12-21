@@ -33,7 +33,7 @@ x509-parser = "0.15"
 der-parser = "8.1"
 rcgen = { path = "../../rcgen/rcgen" }
 ring = "0.17"
-rustls = { version = "0.22" }
+rustls = { version = "0.21.10", features = ["dangerous_configuration"] }
 bincode = "1"
 serde = { version = "1", features = ["derive"] }
 subtle = "2"
