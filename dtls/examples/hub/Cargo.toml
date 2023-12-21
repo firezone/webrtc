@@ -10,7 +10,7 @@ util = { path = "../../../util", package = "webrtc-util", default-features = fal
 dtls = { package = "webrtc-dtls", path = "../../" }
 
 tokio = { version = "1.32.0", features = ["full"] }
-rcgen = { git = "https://github.com/ReactorScram/rcgen", branch = "update-ring", features = ["pem", "x509-parser"] } # Patch to use ring 0.17 which cross-compiles for aarch64 Windows
-rustls = "0.21.10"
+rcgen = { version = "0.12", features = ["pem", "x509-parser"] }
+rustls = "0.21"
 rustls-pemfile = "1"
 thiserror = "1"
