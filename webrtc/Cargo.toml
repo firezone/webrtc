@@ -40,7 +40,7 @@ regex = "1.9.5"
 smol_str = { version = "0.2", features = ["serde"] }
 url = "2"
 rustls = { version = "0.21.10" }
-rcgen = { path = "../../rcgen/rcgen", features = ["pem", "x509-parser"]}
+rcgen = { git = "https://github.com/ReactorScram/rcgen", branch = "update-ring", features = ["pem", "x509-parser"] } # Patch to use ring 0.17 which cross-compiles for aarch64 Windows
 ring = "0.17"
 sha2 = "0.10"
 lazy_static = "1.4"
